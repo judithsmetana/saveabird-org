@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — saveabird Inc®</title>
+<meta name="description" content="saveabird Inc® is a registered nonprofit organization dedicated to bird habitat conservation and education in Brunswick County, NC.">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #111111; --white: #FFFFFF; --off-white: #F8F7F4;
+  --gray-light: #E8E6E1; --gray-mid: #6E6C66; --gray-dark: #444440;
+  --accent: #2D5016; --accent-light: #EBF2E3; --accent-mid: #4A7C28;
+  --gold: #8B6914; --gold-light: #FBF5E6;
+}
+html { scroll-behavior: smooth; }
+body { font-family: Georgia, 'Times New Roman', serif; background: var(--white); color: var(--black); line-height: 1.7; }
+.skip-nav { position: absolute; top: -100px; left: 0; background: var(--black); color: var(--white); padding: 12px 20px; font-size: 14px; font-weight: 700; z-index: 9999; text-decoration: none; }
+.skip-nav:focus { top: 0; }
+*:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 2px solid var(--black); padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+.nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.nav-logo { width: 40px; height: 40px; border-radius: 50%; background: var(--black); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+.nav-title { font-family: Georgia, serif; font-size: 18px; font-weight: 700; color: var(--black); }
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-link { font-family: sans-serif; font-size: 14px; color: var(--gray-dark); text-decoration: none; font-weight: 500; }
+.nav-link:hover { color: var(--black); text-decoration: underline; }
+.nav-cta { background: var(--black); color: var(--white); padding: 8px 20px; border-radius: 6px; font-family: sans-serif; font-size: 14px; font-weight: 700; text-decoration: none; }
+.nav-cta:hover { background: var(--accent); }
+.page-hero { background: var(--off-white); border-bottom: 2px solid var(--black); padding: 64px 24px; }
+.page-hero-inner { max-width: 760px; margin: 0 auto; }
+.eyebrow { font-family: sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent-mid); margin-bottom: 12px; display: block; }
+.page-hero h1 { font-family: Georgia, serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: var(--black); margin-bottom: 16px; line-height: 1.2; }
+.page-hero p { font-family: sans-serif; font-size: 17px; color: var(--gray-dark); line-height: 1.7; max-width: 580px; }
+.section { padding: 72px 24px; }
+.section-inner { max-width: 760px; margin: 0 auto; }
+.section-alt { background: var(--off-white); }
+h2 { font-family: Georgia, serif; font-size: clamp(24px, 3vw, 36px); font-weight: 700; color: var(--black); margin-bottom: 16px; line-height: 1.2; }
+h3 { font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: var(--black); margin-bottom: 10px; }
+p { font-family: sans-serif; font-size: 16px; color: var(--gray-dark); line-height: 1.7; margin-bottom: 16px; }
+.bio-card { background: var(--white); border: 1.5px solid var(--gray-light); border-radius: 12px; padding: 32px; margin-top: 32px; }
+.bio-card h3 { color: var(--black); margin-bottom: 6px; }
+.bio-title { font-family: sans-serif; font-size: 14px; color: var(--accent-mid); font-weight: 600; margin-bottom: 16px; }
+.values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 32px; }
+.value-card { background: var(--white); border: 1.5px solid var(--gray-light); border-radius: 12px; padding: 24px; }
+.value-icon { font-size: 28px; margin-bottom: 12px; display: block; }
+.value-card h3 { font-size: 16px; margin-bottom: 6px; }
+.value-card p { font-size: 14px; margin-bottom: 0; }
+.donate-bar { background: var(--black); padding: 40px 24px; text-align: center; }
+.donate-bar h2 { color: var(--white); font-size: 24px; margin-bottom: 12px; }
+.donate-bar p { color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 20px; }
+.donate-btn { display: inline-block; background: var(--white); color: var(--black); padding: 13px 36px; border-radius: 8px; font-family: sans-serif; font-size: 16px; font-weight: 700; text-decoration: none; }
+.donate-btn:hover { background: var(--gray-light); }
+footer { background: var(--black); color: rgba(255,255,255,0.6); padding: 40px 24px; text-align: center; font-family: sans-serif; font-size: 13px; }
+.footer-brand { font-family: Georgia, serif; color: var(--white); font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+.footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+.footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; }
+.footer-links a:hover { color: var(--white); }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+@media (max-width: 640px) { nav { flex-wrap: wrap; row-gap: 10px; } .nav-links { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 12px 16px; } }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-nav">Skip to main content</a>
+<nav role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-brand" aria-label="saveabird Inc home">
+    <div class="nav-logo" aria-hidden="true">🐦</div>
+    <span class="nav-title">saveabird Inc®</span>
+  </a>
+  <div class="nav-links">
+    <a href="/classes.html" class="nav-link">Classes</a>
+    <a href="/about.html" class="nav-link">About</a>
+    <a href="/#woodpecker" class="nav-link">RCW</a>
+    <a href="/#tools" class="nav-link">Resources</a>
+    <a href="/#contact" class="nav-link">Contact</a>
+    <a href="https://donorbox.org/saveabird-inc" class="nav-cta" target="_blank" rel="noopener noreferrer" aria-label="Donate to saveabird Inc — opens in new tab">Donate <span aria-hidden="true">🐦</span></a>
+  </div>
+</nav>
+<main id="main-content">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">Our Story</span>
+      <h1>About saveabird Inc®</h1>
+      <p>A registered nonprofit organization dedicated to bird habitat conservation and education — based in Brunswick County, North Carolina.</p>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="mission-heading">
+    <div class="section-inner">
+      <span class="eyebrow">Mission</span>
+      <h2 id="mission-heading">Why we exist</h2>
+      <p>saveabird Inc® was founded on a simple but urgent belief: that birds and their habitats deserve protection, and that education is the most powerful tool we have to make that happen.</p>
+      <p>Our mission is to raise awareness of all birds and their habitats through online and live educational platforms — making bird conservation knowledge accessible to everyone, completely free of charge.</p>
+      <p>From the endangered Red-Cockaded Woodpecker in the longleaf pine forests of Boiling Spring Lakes, to the shorebirds and wading birds along Brunswick County's stunning coastline, we believe every bird deserves a safe place to live — and every person deserves the chance to learn about them.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="values-heading">
+    <div class="section-inner">
+      <span class="eyebrow">What we stand for</span>
+      <h2 id="values-heading">Our values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="value-icon" aria-hidden="true">🌿</span>
+          <h3>Conservation</h3>
+          <p>Protecting bird habitats is protecting ecosystems. We advocate for all birds and the environments they depend on.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-icon" aria-hidden="true">📚</span>
+          <h3>Education</h3>
+          <p>All of our classes are free. Knowledge about birds and their habitats should be available to everyone.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-icon" aria-hidden="true">🤝</span>
+          <h3>Community</h3>
+          <p>Based in Brunswick County, NC — we serve our local community while contributing to global bird conservation.</p>
+        </div>
+        <div class="value-card">
+          <span class="value-icon" aria-hidden="true">🔬</span>
+          <h3>Science</h3>
+          <p>We partner with Cornell Lab, Audubon, and USFWS to bring accurate, research-based information to our students.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="founder-heading">
+    <div class="section-inner">
+      <span class="eyebrow">Leadership</span>
+      <h2 id="founder-heading">Our founder</h2>
+      <div class="bio-card">
+        <h3>Judith Smetana</h3>
+        <div class="bio-title">Founder & Executive Director — saveabird Inc®</div>
+        <p>Judith Smetana is the founder and executive director of saveabird Inc®, a registered nonprofit organization based in Southport, North Carolina. A lifelong lover of birds and the natural world, Judith founded saveabird Inc® to bring bird habitat education to her community and beyond.</p>
+        <p>Judith is also the founder and CEO of cuteenglishteacher LLC®, an AI-powered English coaching platform, and holds extensive experience in education, corrections, and nonprofit management. She is based in Brunswick County, NC — home to some of the most remarkable bird habitats on the East Coast, including critical Red-Cockaded Woodpecker territory in Boiling Spring Lakes.</p>
+        <p>Contact: <a href="mailto:judithsmetana@saveabird.org" style="color:var(--accent-mid)">judithsmetana@saveabird.org</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="nonprofit-heading">
+    <div class="section-inner">
+      <span class="eyebrow">Legal Status</span>
+      <h2 id="nonprofit-heading">Nonprofit information</h2>
+      <p>saveabird Inc® is a registered nonprofit organization and registered trademark in the United States. We are headquartered in Brunswick County, North Carolina.</p>
+      <p>Donations to saveabird Inc® are processed securely through Donorbox. Please consult your tax advisor regarding the deductibility of your donation.</p>
+      <p>For legal inquiries contact: <a href="mailto:judithsmetana@saveabird.org" style="color:var(--accent-mid)">judithsmetana@saveabird.org</a></p>
+    </div>
+  </section>
+
+  <div class="donate-bar">
+    <h2>Support our mission <span aria-hidden="true">🐦</span></h2>
+    <p>Every donation helps us protect bird habitats and provide free education to our community.</p>
+    <a href="https://donorbox.org/saveabird-inc" class="donate-btn" target="_blank" rel="noopener noreferrer" aria-label="Donate Today via Donorbox — opens in new tab">Donate Today</a>
+  </div>
+</main>
+<footer role="contentinfo">
+  <div class="footer-brand">saveabird Inc®</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/classes.html">Classes</a>
+    <a href="/about.html">About</a>
+    <a href="/donate.html">Ways to Give</a>
+    <a href="/#contact">Contact</a>
+    <a href="/terms.html">Terms</a>
+    <a href="/privacy.html">Privacy Policy</a>
+  </div>
+  <div>&copy; 2026 saveabird Inc® &nbsp;·&nbsp; Brunswick County, NC &nbsp;·&nbsp; Registered Nonprofit</div>
+</footer>
+</body>
+</html>
